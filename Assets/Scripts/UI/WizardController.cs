@@ -8,36 +8,58 @@ using VHack;
 public class WizardController : MonoBehaviour
 {
 
-    public InputField FirstName { get; set; }
+	public InputField FirstName;
 
-    public InputField SureName { get; set; }
+	public InputField SureName;
 
-    public InputField BirthDate { get; set; }
+	public InputField BirthDate;
 
-    public MaleOption Male { get; set; }
+	public MaleOption Male;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public HelpReason HelpReasons;
 
 
-    // Пол
-    public enum MaleOption
-    {
-        // Мужской
-        [Description("Мужской")]
-        Male = 0,
-        // Женский
-        [Description("Женский")]
-        Female = 1
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+
+	}
+
+	public void SetMale()
+	{
+		Male = MaleOption.Male;
+	}
+
+	public void SetFemale()
+	{
+		Male = MaleOption.Female;
+	}
+
+
+	// Пол
+	public enum MaleOption
+	{
+		// Мужской
+		[Description("Мужской")]
+		Male = 0,
+		// Женский
+		[Description("Женский")]
+		Female = 1
+	}
+
+	public class HelpReason : MonoBehaviour
+	{
+		public bool Fall;
+		public bool Urinal;
+		public bool Shit;
+		public bool LyingCondition;
+		public bool Pain;
+		public bool Devices;
+	}
 }
