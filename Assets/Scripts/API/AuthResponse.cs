@@ -5,6 +5,6 @@ namespace Assets.Scripts.API
 	[System.Serializable]
 	public class AuthResponse : ResponseBase
 	{
-		public string SessionId;
+		public string sessionId;
 	}
 }

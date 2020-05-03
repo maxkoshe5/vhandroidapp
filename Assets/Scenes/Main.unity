@@ -802,7 +802,7 @@ MonoBehaviour:
   surnameInput: {fileID: 1163867408}
   patronymicInput: {fileID: 432242937}
   phoneInput: {fileID: 1057165126}
-  smsCodeInput: {fileID: 0}
+  smsCodeInput: {fileID: 784069242}
 --- !u!1001 &578675677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,6 +975,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d4b7727e32a69140a78cc40e859fac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &784069242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11455190, guid: a3de2ba0ded325146a882192687d7e98,
+    type: 3}
+  m_PrefabInstance: {fileID: 578675677}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &799205716

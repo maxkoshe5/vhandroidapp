@@ -3,6 +3,6 @@
 	[System.Serializable]
 	public class SmsResponse : ResponseBase
 	{
-		public string Token;
+		public string token;
 	}
 }

@@ -3,7 +3,7 @@
 	[System.Serializable]
 	public class ResponseBase
 	{
-		public int Code;
-		public string Description;
+		public int code;
+		public string description;
 	}
 }

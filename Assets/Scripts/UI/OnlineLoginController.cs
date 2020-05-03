@@ -55,13 +55,13 @@ public class OnlineLoginController : MonoBehaviour
 	{
 		this.authCoroutine = null;
 
-		if (authResponse == null || authResponse.Code != 0)
+		if (authResponse == null || authResponse.code != 0)
 		{
 			Debug.Log("Ошибка логина");
 		}
 		else
 		{
-			Toolbox.Instance.sessionId = authResponse.SessionId;
+			Toolbox.Instance.sessionId = authResponse.sessionId;
 			Debug.Log("Логин успешен");
 		}
 	}
@@ -70,13 +70,13 @@ public class OnlineLoginController : MonoBehaviour
 	{
 		this.smsCoroutine = null;
 
-		if (smsResponse == null || smsResponse.Code != 0)
+		if (smsResponse == null || smsResponse.code != 0)
 		{
 			Debug.Log("Ошибка смс кода");
 		}
 		else
 		{
-			Toolbox.Instance.authToken = smsResponse.Token;
+			Toolbox.Instance.authToken = smsResponse.token;
 			Debug.Log("Смс код принят");
 		}
 	}
