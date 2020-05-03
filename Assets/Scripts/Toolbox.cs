@@ -8,6 +8,7 @@ namespace VHack
 		public APIManager APIManager;
 
 		public string authToken;
+		public string sessionId;
 
 		private void Start()
 		{

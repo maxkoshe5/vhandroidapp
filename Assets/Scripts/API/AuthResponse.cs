@@ -3,8 +3,8 @@
 namespace Assets.Scripts.API
 {
 	[System.Serializable]
-	public class AuthResponse
+	public class AuthResponse : ResponseBase
 	{
-		public Guid SessionId;
+		public string SessionId;
 	}
 }
