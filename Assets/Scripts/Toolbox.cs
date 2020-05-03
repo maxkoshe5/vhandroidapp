@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GravityCoaster
+namespace VHack
 {
 	public class Toolbox : Singleton<Toolbox>
 	{

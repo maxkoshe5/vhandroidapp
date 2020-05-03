@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GravityCoaster
+namespace VHack
 {
 	/// <summary>
 	/// Be aware this will not prevent a non singleton constructor
