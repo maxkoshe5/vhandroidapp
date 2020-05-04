@@ -2060,9 +2060,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4923695473591316897}
-  - component: {fileID: 4703363824223112884}
+  - component: {fileID: 8495748964282475196}
   m_Layer: 5
-  m_Name: BartelIndexWizard
+  m_Name: FallIndexWizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2099,7 +2099,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 16}
   m_SizeDelta: {x: 480, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4703363824223112884
+--- !u!114 &8495748964282475196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -11,12 +11,26 @@ public class WizardController : MonoBehaviour
 
 	public InputField SureName;
 
+	public InputField LastName;
+
 	public InputField BirthDate;
 
 	public MaleOption Male;
 
-	public HelpReason HelpReasons;
+	// Причины необходимости помощи
+	public Toggle Fall;
+	public Toggle Urinal;
+	public Toggle Shit;
+	public Toggle LyingCondition;
+	public Toggle Pain;
+	public Toggle Demention;
 
+
+
+	// Причины необходимости помощи
+	public Toggle Tracheostoma;
+	public Toggle Gastrostoma;
+	public Toggle UrinalDevice;
 
 	// Start is called before the first frame update
 	void Start()
@@ -50,14 +64,5 @@ public class WizardController : MonoBehaviour
 		// Женский
 		[Description("Женский")]
 		Female = 1
-	}
-
-	public class HelpReason : MonoBehaviour
-	{
-		public bool Fall;
-		public bool Urinal;
-		public bool Shit;
-		public bool LyingCondition;
-		public bool Pain;
 	}
 }
