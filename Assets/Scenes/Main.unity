@@ -21444,7 +21444,7 @@ PrefabInstance:
     - target: {fileID: 2047857897892432694, guid: 940bd9bdc5b464142924faf0f2b0edde,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2047857897892432694, guid: 940bd9bdc5b464142924faf0f2b0edde,
         type: 3}
@@ -21911,6 +21911,12 @@ PrefabInstance:
       propertyPath: contentStripe
       value: 
       objectReference: {fileID: 472199077296993973, guid: e1f211df90c0d7f428eb1d35d0bfd9f1,
+        type: 3}
+    - target: {fileID: 4901020963738979571, guid: 940bd9bdc5b464142924faf0f2b0edde,
+        type: 3}
+      propertyPath: calendarEvent
+      value: 
+      objectReference: {fileID: 6800100787339512572, guid: c40d4dbfaa968474eac2f5c451b433b2,
         type: 3}
     - target: {fileID: 5010402895295953121, guid: 940bd9bdc5b464142924faf0f2b0edde,
         type: 3}

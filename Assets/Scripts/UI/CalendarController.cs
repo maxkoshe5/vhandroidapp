@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CalendarController : MonoBehaviour
 {
 	public GameObject calendarStripe;
 	public GameObject contentStripe;
+	public GameObject calendarEvent;
 	public RectTransform dateStripeParent;
 	public RectTransform scrollRectContent;
 	public List<CalendarStripeController> instantiatedCalendarStripes;
@@ -25,6 +27,26 @@ public class CalendarController : MonoBehaviour
 		{
 			this.instantiatedCalendarStripes.Add(this.CreateCalendarStripe(lastDateTime));
 			lastDateTime = lastDateTime.AddDays(1);
+
+			var content = CreateCalendarContent();
+
+			if (patient.LyingCondition)
+			{
+				var clone = GameObject.Instantiate(this.calendarEvent.gameObject, content.transform);
+
+				var cloneRectTransform = clone.GetComponent<RectTransform>();
+
+				cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 240);
+
+				var eventText = clone.GetComponent<Text>();
+
+				eventText.text = "Перевернуть подопечного";
+			}
+
+			if (patient.Urinal)
+			{
+				
+			}
 		}
 
 		this.gameObject.SetActive(true);
@@ -47,13 +69,22 @@ public class CalendarController : MonoBehaviour
 	{
 		var clone = GameObject.Instantiate(this.calendarStripe, this.dateStripeParent);
 
-		var contentClone = GameObject.Instantiate(this.contentStripe, this.scrollRectContent);
+		
 
 		var calendarStripeController = clone.GetComponent<CalendarStripeController>();
 
 		calendarStripeController.Initialize(dateTime);
-		this.contentClones.Add(contentClone);
+		
 
 		return calendarStripeController;
+	}
+
+	public GameObject CreateCalendarContent()
+	{
+		var contentClone = GameObject.Instantiate(this.contentStripe, this.scrollRectContent);
+
+		this.contentClones.Add(contentClone);
+
+		return contentClone;
 	}
 }
