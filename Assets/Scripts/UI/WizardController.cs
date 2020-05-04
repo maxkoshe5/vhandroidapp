@@ -3,7 +3,6 @@ using System.ComponentModel;
 using Assets.Scripts.API;
 using UnityEngine;
 using UnityEngine.UI;
-using VHack;
 
 public class WizardController : MonoBehaviour
 {
@@ -60,6 +59,5 @@ public class WizardController : MonoBehaviour
 		public bool Shit;
 		public bool LyingCondition;
 		public bool Pain;
-		public bool Devices;
 	}
 }
