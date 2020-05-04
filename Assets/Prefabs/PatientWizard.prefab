@@ -4590,7 +4590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11434764, guid: 946f95a063e57f046b55d502f65561fa, type: 3}
       propertyPath: m_Text
-      value: "\u0411\u043E\u043B\u0438"
+      value: "\u0414\u0435\u043C\u0435\u043D\u0446\u0438\u044F"
       objectReference: {fileID: 0}
     - target: {fileID: 22434758, guid: 946f95a063e57f046b55d502f65561fa, type: 3}
       propertyPath: m_LocalPosition.x
