@@ -5,8 +5,12 @@ using UnityEngine;
 public class CalendarController : MonoBehaviour
 {
 	public GameObject calendarStripe;
-	public RectTransform stripeParent;
+	public GameObject contentStripe;
+	public RectTransform dateStripeParent;
+	public RectTransform scrollRectContent;
 	public List<CalendarStripeController> instantiatedCalendarStripes;
+	public float timeStripeWidth = 240;
+	public float timeStripeHeight = 80;
 
 	public void Start()
 	{
@@ -28,7 +32,9 @@ public class CalendarController : MonoBehaviour
 
 	public CalendarStripeController CreateCalendarStripe(DateTime dateTime)
 	{
-		var clone = GameObject.Instantiate(this.calendarStripe, this.stripeParent);
+		var clone = GameObject.Instantiate(this.calendarStripe, this.dateStripeParent);
+
+		var contentClone = GameObject.Instantiate(this.contentStripe, this.scrollRectContent);
 
 		var calendarStripeController = clone.GetComponent<CalendarStripeController>();
 
