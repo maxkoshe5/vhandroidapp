@@ -65,7 +65,8 @@ public class WizardController : MonoBehaviour
 			Demention = this.Demention.isOn,
 			Tracheostoma = this.Tracheostoma.isOn,
 			Gastrostoma = this.Gastrostoma.isOn,
-			UrinalDevice = this.UrinalDevice.isOn
+			UrinalDevice = this.UrinalDevice.isOn,
+			NortonIndex = nortonWizard.WizardIndex
 		};
 
 		Toolbox.Instance.saveManager.AddPatient(this.patient);

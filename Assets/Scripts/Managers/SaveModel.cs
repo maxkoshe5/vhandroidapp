@@ -25,4 +25,5 @@ public class Patient
 	public bool Tracheostoma;
 	public bool Gastrostoma;
 	public bool UrinalDevice;
+	public int NortonIndex;
 }
