@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Managers;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace VHack
 {
