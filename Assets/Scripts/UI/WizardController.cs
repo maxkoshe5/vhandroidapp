@@ -8,6 +8,9 @@ using VHack;
 
 public class WizardController : MonoBehaviour
 {
+	public IndexWizardController nortonWizard;
+	public CalendarController calendarController;
+
 	public InputField FirstName;
 	public InputField SureName;
 	public InputField LastName;
@@ -24,6 +27,8 @@ public class WizardController : MonoBehaviour
 	public Toggle Gastrostoma;
 	public Toggle UrinalDevice;
 
+	public Patient patient;
+
 	public void SetMale()
 	{
 		this.Male = MaleOption.Male;
@@ -33,7 +38,6 @@ public class WizardController : MonoBehaviour
 	{
 		this.Male = MaleOption.Female;
 	}
-
 
 	// Пол
 	public enum MaleOption
@@ -48,7 +52,7 @@ public class WizardController : MonoBehaviour
 
 	public void AddCurrentPatient()
 	{
-		Toolbox.Instance.saveManager.AddPatient(new Patient()
+		this.patient = new Patient()
 		{
 			Id = Guid.NewGuid(),
 			Name = this.FirstName.text,
@@ -62,6 +66,17 @@ public class WizardController : MonoBehaviour
 			Tracheostoma = this.Tracheostoma.isOn,
 			Gastrostoma = this.Gastrostoma.isOn,
 			UrinalDevice = this.UrinalDevice.isOn
-		});
+		};
+
+		Toolbox.Instance.saveManager.AddPatient(this.patient);
+
+		if (this.patient.LyingCondition && (!this.nortonWizard.completed))
+		{
+			this.nortonWizard.gameObject.SetActive(true);
+		}
+		else
+		{
+			this.calendarController.CreateNextMonth(this.patient);
+		}
 	}
 }

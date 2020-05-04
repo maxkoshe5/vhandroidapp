@@ -42,14 +42,6 @@ public class SaveManager : MonoBehaviour
 			{
 				patients = new List<Patient>()
 				{
-					new Patient()
-					{
-						Id = new Guid("f16c5190-ee56-4355-90d5-51eb8609d213"),
-						Name = "Иван",
-						Surname = "Иванов",
-						Phone = "+71234567890",
-						LyingCondition = true,
-					}
 				}
 			};
 		}

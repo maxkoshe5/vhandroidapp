@@ -12,12 +12,7 @@ public class CalendarController : MonoBehaviour
 	public float timeStripeWidth = 240;
 	public float timeStripeHeight = 80;
 
-	public void Start()
-	{
-		this.CreateNextWeek();
-	}
-
-	public void CreateNextWeek()
+	public void CreateNextMonth(Patient patient)
 	{
 		var lastDateTime = this.instantiatedCalendarStripes.Count > 0 
 			? this.instantiatedCalendarStripes[this.instantiatedCalendarStripes.Count-1].stripeDateTime.AddDays(1) 
@@ -28,6 +23,8 @@ public class CalendarController : MonoBehaviour
 			this.instantiatedCalendarStripes.Add(this.CreateCalendarStripe(lastDateTime));
 			lastDateTime = lastDateTime.AddDays(1);
 		}
+
+		this.gameObject.SetActive(true);
 	}
 
 	public CalendarStripeController CreateCalendarStripe(DateTime dateTime)
