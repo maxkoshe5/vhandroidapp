@@ -4,6 +4,8 @@ namespace VHack
 {
 	public class Toolbox : Singleton<Toolbox>
 	{
+		public SaveManager saveManager;
+
 		public string authToken;
 		public string sessionId;
 
@@ -13,6 +15,11 @@ namespace VHack
 		private void Start()
 		{
 			Application.targetFrameRate = 60;
+		}
+
+		private void OnApplicationQuit()
+		{
+			saveManager.Save();
 		}
 	}
 }
