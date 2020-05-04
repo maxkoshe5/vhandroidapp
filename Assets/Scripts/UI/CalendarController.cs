@@ -35,17 +35,17 @@ public class CalendarController : MonoBehaviour
 				for (int k = 0; k < 12; k++)
 				{
 					var clone = GameObject.Instantiate(this.calendarEvent.gameObject, content.transform);
-
 					var cloneRectTransform = clone.GetComponent<RectTransform>();
 
-					cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 240 - (160 * k));
+					cloneRectTransform.sizeDelta = new Vector2(cloneRectTransform.sizeDelta.x, 60);
+					cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 220 - (160 * k));
 
 					var eventText = clone.GetComponent<Text>();
 
 					eventText.text = "Перевернуть подопечного";
 				}
 
-				var gymCount = patient.NortonIndex == null ? 0 : patient.NortonIndex < 12 ? 2 : patient.NortonIndex < 14 ? 1 : 0;
+				var gymCount = patient.NortonIndex < 12 ? 2 : patient.NortonIndex < 14 ? 1 : 0;
 
 				for (int l = 0; l < gymCount; l++)
 				{
@@ -53,7 +53,9 @@ public class CalendarController : MonoBehaviour
 
 					var cloneRectTransform = clone.GetComponent<RectTransform>();
 
-					cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 960 - (640 * l));
+					cloneRectTransform.sizeDelta = new Vector2(cloneRectTransform.sizeDelta.x, 40);
+
+					cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 900 - (640 * l));
 
 					var eventText = clone.GetComponent<Text>();
 
@@ -61,20 +63,82 @@ public class CalendarController : MonoBehaviour
 				}
 			}
 
-			if (patient.Urinal)
+			if (patient.UrinalDevice)
 			{
-				for (int l = 0; l < 2; l++)
+				for (int l = 0; l < 6; l++)
 				{
 					var clone = GameObject.Instantiate(this.calendarEvent.gameObject, content.transform);
 
 					var cloneRectTransform = clone.GetComponent<RectTransform>();
 
-					cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 800 - (960 * l));
+					cloneRectTransform.sizeDelta = new Vector2(cloneRectTransform.sizeDelta.x, 40);
+					cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 120 - (320 * l));
 
 					var eventText = clone.GetComponent<Text>();
 
-					eventText.text = "Интимная гигиена";
+					eventText.text = "Опорожнить мочеприемник";
 				}
+			}
+
+
+			// TODO: Питание
+			for (int e = 0; e < 5; e++)
+			{
+				var clone = GameObject.Instantiate(this.calendarEvent.gameObject, content.transform);
+
+				var cloneRectTransform = clone.GetComponent<RectTransform>();
+
+				cloneRectTransform.sizeDelta = new Vector2(cloneRectTransform.sizeDelta.x, 40);
+				cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 800 - (160 * e));
+
+				var eventText = clone.GetComponent<Text>();
+
+				eventText.text = "Прием пищи";
+			}
+
+			// TODO: Чистка зубов
+			for (int l = 0; l < 2; l++)
+			{
+				var clone = GameObject.Instantiate(this.calendarEvent.gameObject, content.transform);
+
+				var cloneRectTransform = clone.GetComponent<RectTransform>();
+
+				cloneRectTransform.sizeDelta = new Vector2(cloneRectTransform.sizeDelta.x, 40);
+				cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 730 - (960 * l));
+
+				var eventText = clone.GetComponent<Text>();
+
+				eventText.text = "Чистка зубов";
+			}
+
+			// TODO: Мытьё головы
+			if (i > 0 && i - 1 % 4 == 0)
+			{
+				var clone = GameObject.Instantiate(this.calendarEvent.gameObject, content.transform);
+
+				var cloneRectTransform = clone.GetComponent<RectTransform>();
+
+				cloneRectTransform.sizeDelta = new Vector2(cloneRectTransform.sizeDelta.x, 40);
+				cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 1760);
+
+				var eventText = clone.GetComponent<Text>();
+
+				eventText.text = "Мытьё головы";
+			}
+
+			// TODO: Маникюр и педикюр
+			if (i > 1 && i - 2 % 8 == 0)
+			{
+				var clone = GameObject.Instantiate(this.calendarEvent.gameObject, content.transform);
+
+				var cloneRectTransform = clone.GetComponent<RectTransform>();
+
+				cloneRectTransform.sizeDelta = new Vector2(cloneRectTransform.sizeDelta.x, 40);
+				cloneRectTransform.anchoredPosition = new Vector2(cloneRectTransform.anchoredPosition.x, cloneRectTransform.anchoredPosition.y - 1060);
+
+				var eventText = clone.GetComponent<Text>();
+
+				eventText.text = "Маникюр и педикюр";
 			}
 		}
 
