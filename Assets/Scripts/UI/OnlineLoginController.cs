@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using Assets.Scripts.API;
+﻿using Assets.Scripts.API;
+
 using UnityEngine;
 using UnityEngine.UI;
+
 using VHack;
 
 public class OnlineLoginController : MonoBehaviour
