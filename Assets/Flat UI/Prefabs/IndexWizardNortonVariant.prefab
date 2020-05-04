@@ -554,6 +554,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4923695472457554956, guid: ddc6dab43dac18544b9759ca7e8bae8b,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4923695472457554962, guid: ddc6dab43dac18544b9759ca7e8bae8b,
         type: 3}
       propertyPath: m_Name

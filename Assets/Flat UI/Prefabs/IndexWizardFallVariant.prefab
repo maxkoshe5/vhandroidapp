@@ -1940,11 +1940,21 @@ PrefabInstance:
       propertyPath: ResultText
       value: 
       objectReference: {fileID: 4266427645575026803}
+    - target: {fileID: 4703363824223112884, guid: ddc6dab43dac18544b9759ca7e8bae8b,
+        type: 3}
+      propertyPath: WizardTypeField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4923695472457554956, guid: ddc6dab43dac18544b9759ca7e8bae8b,
         type: 3}
       propertyPath: m_Text
       value: "\u0421\u043B\u0435\u0434\u0443\u0435\u0442 \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u044C
         \u043E\u0446\u0435\u043D\u043A\u0443 1 \u0440\u0430\u0437 \u0432 3 \u043C\u0435\u0441\u044F\u0446\u0430\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923695472457554956, guid: ddc6dab43dac18544b9759ca7e8bae8b,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4923695472457554962, guid: ddc6dab43dac18544b9759ca7e8bae8b,
         type: 3}
