@@ -11,20 +11,9 @@ public class IndexWizardController : MonoBehaviour
 	public int WizardIndex = 0;
 	public Text ResultText;
 	public WizardType WizardTypeField;
+	public bool completed;
 
 	private Stack<int> lastIndexIncrement = new Stack<int>();
-
-	// Start is called before the first frame update
-	void Start()
-	{
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
-
 
 	public void AddIndex(int index)
 	{
@@ -47,6 +36,8 @@ public class IndexWizardController : MonoBehaviour
 
 	private string ResolveText()
 	{
+		completed = true;
+
 		if (WizardTypeField == WizardType.Fall)
 		{
 			if (new int[] { 0, 1, 2, 3, 4 }.Contains(WizardIndex))
@@ -105,6 +96,7 @@ public class IndexWizardController : MonoBehaviour
 			}
 			return "нет риска падения";
 		}
+
 		return "в помощи окружающих не нуждается.";
 	}
 
