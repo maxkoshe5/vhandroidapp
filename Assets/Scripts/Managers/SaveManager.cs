@@ -8,6 +8,7 @@ public class SaveManager : MonoBehaviour
 	public SaveModel saveModel;
 	public GameObject patientPrefab;
 	public RectTransform patientsList;
+	public CalendarController calendarController;
 
 	public void Awake()
 	{
@@ -63,7 +64,7 @@ public class SaveManager : MonoBehaviour
 
 			var patientController = clone.GetComponent<PatientInfoController>();
 
-			patientController.Initialize(this.saveModel.patients[i]);
+			patientController.Initialize(this.saveModel.patients[i], calendarController);
 		}
 	}
 }

@@ -9,11 +9,14 @@ public class CalendarController : MonoBehaviour
 	public RectTransform dateStripeParent;
 	public RectTransform scrollRectContent;
 	public List<CalendarStripeController> instantiatedCalendarStripes;
+	public List<GameObject> contentClones;
 	public float timeStripeWidth = 240;
 	public float timeStripeHeight = 80;
 
 	public void CreateNextMonth(Patient patient)
 	{
+		ClearCalendar();
+
 		var lastDateTime = this.instantiatedCalendarStripes.Count > 0 
 			? this.instantiatedCalendarStripes[this.instantiatedCalendarStripes.Count-1].stripeDateTime.AddDays(1) 
 			: DateTime.Now.Date;
@@ -27,6 +30,19 @@ public class CalendarController : MonoBehaviour
 		this.gameObject.SetActive(true);
 	}
 
+	public void ClearCalendar()
+	{
+		foreach (var clone in contentClones)
+		{
+			GameObject.Destroy(clone);
+		}
+
+		foreach (var clone in instantiatedCalendarStripes)
+		{
+			GameObject.Destroy(clone.gameObject);
+		}
+	}
+
 	public CalendarStripeController CreateCalendarStripe(DateTime dateTime)
 	{
 		var clone = GameObject.Instantiate(this.calendarStripe, this.dateStripeParent);
@@ -36,6 +52,7 @@ public class CalendarController : MonoBehaviour
 		var calendarStripeController = clone.GetComponent<CalendarStripeController>();
 
 		calendarStripeController.Initialize(dateTime);
+		this.contentClones.Add(contentClone);
 
 		return calendarStripeController;
 	}
