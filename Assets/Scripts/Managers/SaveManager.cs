@@ -6,6 +6,8 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
 	public SaveModel saveModel;
+	public GameObject patientPrefab;
+	public RectTransform patientsList;
 
 	public void Awake()
 	{
@@ -17,11 +19,24 @@ public class SaveManager : MonoBehaviour
 		PlayerPrefs.SetString("saveData", JsonUtility.ToJson(this.saveModel));
 	}
 
+	public void AddPatient(Patient patient)
+	{
+		this.saveModel.patients.Add(patient);
+
+		this.Save();
+		this.Load();
+	}
+
+	public void ClearSavedPatients()
+	{
+		PlayerPrefs.SetString("saveData", null);
+	}
+
 	public void Load()
 	{
 		var json = PlayerPrefs.GetString("saveData", null);
 
-		if (json == null)
+		if (string.IsNullOrWhiteSpace(json))
 		{
 			this.saveModel = new SaveModel()
 			{
@@ -31,7 +46,9 @@ public class SaveManager : MonoBehaviour
 					{
 						Id = new Guid("f16c5190-ee56-4355-90d5-51eb8609d213"),
 						Name = "Иван",
-						Surname = "Иванов"
+						Surname = "Иванов",
+						Phone = "+71234567890",
+						LyingCondition = true,
 					}
 				}
 			};
@@ -39,6 +56,20 @@ public class SaveManager : MonoBehaviour
 		else
 		{
 			this.saveModel = JsonUtility.FromJson<SaveModel>(json);
+		}
+
+		foreach (Transform child in this.patientsList.transform)
+		{
+			GameObject.Destroy(child.gameObject);
+		}
+
+		for (int i = 0; i < this.saveModel.patients.Count; i++)
+		{
+			var clone = GameObject.Instantiate(patientPrefab, patientsList);
+
+			var patientController = clone.GetComponent<PatientInfoController>();
+
+			patientController.Initialize(this.saveModel.patients[i]);
 		}
 	}
 }

@@ -19,7 +19,7 @@ namespace VHack
 
 		private void OnApplicationQuit()
 		{
-			saveManager.Save();
+			this.saveManager.Save();
 		}
 	}
 }
