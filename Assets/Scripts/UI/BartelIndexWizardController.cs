@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BartelIndexWizardController : MonoBehaviour
 {
+	public Text BartelIndexLabel;
 	public int BartelIndex = 0;
 	private Stack<int> lastIndexIncrement = new Stack<int>();
 
@@ -24,10 +25,17 @@ public class BartelIndexWizardController : MonoBehaviour
 	{
 		lastIndexIncrement.Push(index);
 		BartelIndex += index;
+		RefreshText();
 	}
 
 	public void ClearLastSelectionIncrement()
 	{
 		BartelIndex -= lastIndexIncrement.Pop();
+		RefreshText();
+	}
+
+	private void RefreshText()
+	{
+		BartelIndexLabel.text = BartelIndex.ToString();
 	}
 }
