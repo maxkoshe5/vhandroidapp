@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Managers;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace VHack
 {
@@ -7,6 +6,9 @@ namespace VHack
 	{
 		public string authToken;
 		public string sessionId;
+
+		public float uiwidth = 640;
+		public float uiheight = 480;
 
 		private void Start()
 		{
