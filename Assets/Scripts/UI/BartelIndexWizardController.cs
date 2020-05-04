@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class BartelIndexWizardController : MonoBehaviour
 {
-	public int BartelIndex;
-	public InputField BartelIndexField;
+	public int BartelIndex = 0;
 	private Stack<int> lastIndexIncrement = new Stack<int>();
 
 	// Start is called before the first frame update
@@ -25,12 +24,10 @@ public class BartelIndexWizardController : MonoBehaviour
 	{
 		lastIndexIncrement.Push(index);
 		BartelIndex += index;
-		BartelIndexField.text = BartelIndex.ToString();
 	}
 
 	public void ClearLastSelectionIncrement()
 	{
 		BartelIndex -= lastIndexIncrement.Pop();
-		BartelIndexField.text = BartelIndex.ToString();
 	}
 }
