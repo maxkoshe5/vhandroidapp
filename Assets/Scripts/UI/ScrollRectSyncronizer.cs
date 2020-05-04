@@ -8,6 +8,7 @@ public class ScrollRectSyncronizer : MonoBehaviour
 	public Scrollbar scrollbar;
 	public bool isVertical;
 	public float offset;
+	public RectTransform scrollRectContent;
 
 	public Vector2 defaultAnchoredPosition;
 
@@ -23,13 +24,13 @@ public class ScrollRectSyncronizer : MonoBehaviour
 			this.rectTransform.anchoredPosition =
 				new Vector3(
 					this.rectTransform.anchoredPosition.x,
-					this.defaultAnchoredPosition.y + (1 - this.scrollbar.value) * (this.scrollRect.sizeDelta.y - this.offset));
+					this.defaultAnchoredPosition.y + scrollRectContent.anchoredPosition.y);
 		}
 		else
 		{
 			this.rectTransform.anchoredPosition =
 				new Vector3(
-					this.defaultAnchoredPosition.x - (this.scrollbar.value) * (this.scrollRect.sizeDelta.x - this.offset),
+					this.defaultAnchoredPosition.x + scrollRectContent.anchoredPosition.x,
 					this.rectTransform.anchoredPosition.y);
 		}
 	}

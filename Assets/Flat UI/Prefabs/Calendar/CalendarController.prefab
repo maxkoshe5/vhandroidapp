@@ -389,6 +389,7 @@ MonoBehaviour:
   scrollbar: {fileID: 6991371057148671873}
   isVertical: 1
   offset: 0
+  scrollRectContent: {fileID: 3177401632084512198}
   defaultAnchoredPosition: {x: 0, y: 0}
 --- !u!1 &1189345232035453411
 GameObject:
@@ -2636,6 +2637,7 @@ MonoBehaviour:
   scrollbar: {fileID: 5882393270922951298}
   isVertical: 0
   offset: 0
+  scrollRectContent: {fileID: 3177401632084512198}
   defaultAnchoredPosition: {x: 0, y: 0}
 --- !u!114 &567069481774319645
 MonoBehaviour:
