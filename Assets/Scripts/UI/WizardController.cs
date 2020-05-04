@@ -73,6 +73,7 @@ public class WizardController : MonoBehaviour
 		if (this.patient.LyingCondition && (!this.nortonWizard.completed))
 		{
 			this.nortonWizard.gameObject.SetActive(true);
+			//this.gameObject.SetActive(false);
 		}
 		else
 		{

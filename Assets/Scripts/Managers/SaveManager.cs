@@ -34,6 +34,8 @@ public class SaveManager : MonoBehaviour
 
 	public void Load()
 	{
+		ClearSavedPatients();
+
 		var json = PlayerPrefs.GetString("saveData", null);
 
 		if (string.IsNullOrWhiteSpace(json))

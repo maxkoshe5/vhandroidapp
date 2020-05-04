@@ -18,7 +18,7 @@ public class CalendarController : MonoBehaviour
 			? this.instantiatedCalendarStripes[this.instantiatedCalendarStripes.Count-1].stripeDateTime.AddDays(1) 
 			: DateTime.Now.Date;
 
-		for (int i = 0; i < 7; i++)
+		for (int i = 0; i < 31; i++)
 		{
 			this.instantiatedCalendarStripes.Add(this.CreateCalendarStripe(lastDateTime));
 			lastDateTime = lastDateTime.AddDays(1);
